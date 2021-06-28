@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import "./App.css";
-import Card from "./components/Card/Card";
-import ExpenseItem from "./components/ExpenseItem/ExpenseItem";
+import Card from "./components/UI/Card/Card";
+import ExpenseItem from "./components/Expenses/ExpenseItem/ExpenseItem";
 
 function App() {
 

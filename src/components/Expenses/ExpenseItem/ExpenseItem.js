@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import "./ExpenseItem.css";
 import ExpenseDate from '../ExpenseDate/ExpenseDate';
-import Card from '../Card/Card';
+import Card from '../../UI/Card/Card';
 
 const ExpenseItem = ({ title, amount, date }) => {
   
