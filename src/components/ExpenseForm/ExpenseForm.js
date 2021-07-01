@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 
-const ExpenseForm = () => {
+const ExpenseForm = ({ onSaveExpenseData }) => {
   // Single Item State
   // const [enteredTitle, setEnteredTitle] = useState('')
   // const [enteredAmount, setEnteredAmount] = useState('')
@@ -38,12 +38,12 @@ const ExpenseForm = () => {
     // setUserInput({
     //   ...userInput,
     //   enteredAmount: event.target.value,
-    // })
+    // });
 
     // Get the previous state snapshot and update it. (Recomanded when you need to depending on a previous state)
     setUserInput((previousState) => {
       return { ...previousState, enteredAmount: event.target.value, }
-    })
+    });
   }
 
   const dateChangeHandler = (event) => {
@@ -72,6 +72,9 @@ const ExpenseForm = () => {
       date: new Date(userInput.enteredDate),
     }
     console.log(expenseData);
+
+    // On Save Expense Data will executed here
+    onSaveExpenseData(expenseData);
 
     // Get the previous state snapshot and update it. (Recomanded when you need to depending on a previous state)
     setUserInput((previousState) => {
