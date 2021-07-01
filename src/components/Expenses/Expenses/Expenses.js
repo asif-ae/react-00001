@@ -15,7 +15,25 @@ const Expenses = () => {
     <Fragment>
       <Card className="container-fluid">
         <div className="h100">
-          <ExpenseItem
+
+          {/* Dynamicly item components using map() */}
+          {
+            expenses.map(expense => {
+              return (
+                <ExpenseItem
+                  title={expense.title}
+                  amount={expense.amount}
+                  date={expense.date}
+
+                  // The Key Prop
+                  key={expense.id}
+                ></ExpenseItem>
+              )
+            })
+          }
+
+          {/* Single Item Hard Coded Components */}
+          {/* <ExpenseItem
             title={expenses[0].title}
             amount={expenses[0].amount}
             date={expenses[0].date}
@@ -34,7 +52,7 @@ const Expenses = () => {
             title={expenses[3].title}
             amount={expenses[3].amount}
             date={expenses[3].date}
-          ></ExpenseItem>
+          ></ExpenseItem> */}
         </div>
       </Card>
     </Fragment>
